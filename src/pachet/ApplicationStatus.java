@@ -1,5 +1,5 @@
 package pachet;
 
 public enum ApplicationStatus {
-	Pending, Accepted, Rejected
+	PENDING, ACCEPTED, REJECTED
 }

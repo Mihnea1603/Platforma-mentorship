@@ -5,7 +5,6 @@ import java.util.Date;
 public class Appointment {
 	private AppointmentType type;
 	private Date date;
-
 	private Mentee mentee;
 	private Mentor mentor;
 	private Feedback feedback;
@@ -27,8 +26,18 @@ public class Appointment {
 		this.feedback = feedback;
 	}
 
-	public void showAppointment() {
-		System.out.println("Appointment type: " + type);
-		System.out.println("Date: " + date);
+	public void showAppointment(User user) {
+		if (user instanceof Mentor) {
+			System.out.println("\n  Mentee:");
+			mentee.viewProfile("  ");
+		} else if (user instanceof Mentee) {
+			System.out.println("\n  Mentor:");
+			mentor.viewProfile("  ");
+		}
+		System.out.println("\n  Appointment type: " + type);
+		System.out.println("  Date: " + date);
+		if (feedback != null) {
+			feedback.showFeedback();
+		}
 	}
 }

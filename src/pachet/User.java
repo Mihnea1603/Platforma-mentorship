@@ -9,9 +9,16 @@ public class User {
 		this.experience = experience;
 	}
 
-	public void viewProfile() {
-		System.out.println("Username: " + username);
-		System.out.println("Password: " + password);
-		System.out.println("Experience: " + experience);
+	public String getUsername() {
+		return username;
+	}
+
+	public boolean checkPassword(String password) {
+		return this.password.equals(password);
+	}
+
+	public void viewProfile(String indent) {
+		System.out.println(indent + "Username: " + username);
+		System.out.println(indent + "Experience: " + experience);
 	}
 }

@@ -1,5 +1,5 @@
 package pachet;
 
 public enum AppointmentType {
-	Online, InPerson
+	ONLINE, INPERSON
 }
