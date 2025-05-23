@@ -65,7 +65,7 @@ public class Mentee extends User {
 		application.assignMentorshipOffer(selectedOffer);
 	}
 
-	private boolean searchMentor(ArrayList<Mentor> mentors) {
+	public boolean searchMentor(ArrayList<Mentor> mentors) {
 		if (mentors.isEmpty()) {
 			System.out.println("No mentors found.");
 			return false;
@@ -78,12 +78,11 @@ public class Mentee extends User {
 				continue;
 			}
 
-			System.out.println("\n" + i + ". Mentor: ");
+			System.out.println("\n" + i + ". Mentor:");
 			mentor.viewProfile("  ");
-			System.out.println();
 			for (int j = 0; j < mentorshipOffers.size(); j++) {
 				MentorshipOffer offer = mentorshipOffers.get(j);
-				System.out.println("  " + j + ". Offer:");
+				System.out.println("\n  " + j + ". Offer:");
 				offer.showOffer("    ");
 			}
 		}

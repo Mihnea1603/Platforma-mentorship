@@ -171,7 +171,7 @@ public class Mentor extends User {
 		Mentee selectedApplicationMentee = selectedOfferApplications.get(j).getMentee();
 		System.out.print("Enter appointment type (Online/InPerson): ");
 		AppointmentType type = AppointmentType.valueOf(sc.nextLine().toUpperCase());
-		System.out.print("Enter date (yyyy-MM-dd): ");
+		System.out.print("Enter date (yyyy-MM-dd HH:mm): ");
 		String dateStr = sc.nextLine();
 		Date date;
 		try {
@@ -192,9 +192,9 @@ public class Mentor extends User {
 			System.out.println("No appointments found.");
 			return;
 		}
-		System.out.println("Your appointments:");
+		System.out.println("\nYour appointments:");
 		for (int i = 0; i < appointments.size(); i++) {
-			System.out.println(i + ". Appointment:");
+			System.out.println("\n" + i + ". Appointment:");
 			appointments.get(i).showAppointment(this);
 		}
 
